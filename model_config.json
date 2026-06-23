@@ -1,0 +1,62 @@
+{
+  "image_size": [
+    224,
+    224
+  ],
+  "feature_dim": 2048,
+  "age_groups": {
+    "0": {
+      "name": "Early Childhood",
+      "range": [
+        4,
+        6
+      ]
+    },
+    "1": {
+      "name": "Late Childhood",
+      "range": [
+        7,
+        9
+      ]
+    },
+    "2": {
+      "name": "Puberty",
+      "range": [
+        10,
+        14
+      ]
+    },
+    "3": {
+      "name": "Late Adolescence",
+      "range": [
+        15,
+        18
+      ]
+    }
+  },
+  "gb_params": {
+    "n_estimators": 200,
+    "learning_rate": 0.1,
+    "max_depth": 5,
+    "min_samples_split": 5,
+    "random_state": 42
+  },
+  "svm_params": {
+    "kernel": "rbf",
+    "C": 10,
+    "gamma": "scale",
+    "random_state": 42
+  },
+  "test_metrics": {
+    "regression": {
+      "MAE": 15.830272686054643,
+      "MSE": 399.17396292270314,
+      "RMSE": 19.979338400525258,
+      "R2": 0.7087199977811713
+    },
+    "classification": {
+      "Accuracy": 0.7535832414553473,
+      "F1-Score": 0.7419880679263743
+    }
+  }
+}

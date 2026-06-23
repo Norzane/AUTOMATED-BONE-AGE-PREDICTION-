@@ -1,0 +1,69 @@
+
+================================================================================
+BONE AGE PREDICTION SYSTEM - PERFORMANCE SUMMARY
+FYP PROJECT: KMK3103/3104 (Semester 2, 2025/2026)
+================================================================================
+
+METHODOLOGY:
+  • Feature Extraction: ResNet-50 (ImageNet pretrained)
+  • Regression Model: Gradient Boosting Regressor
+  • Classification Model: Support Vector Machine (SVM)
+  • Image Size: (224, 224)
+  • Feature Dimensions: 2048 (ResNet-50 output)
+
+DATASET:
+  • Source: RSNA 2017 Pediatric Bone Age
+  • Method: Greulich & Pyle (GP) Atlas
+  • Total Samples: 12,093
+  • Training: 8,465
+  • Validation: 1,814
+  • Test: 1,814
+
+AGE GROUPS:
+  Class 0 - Early Childhood (4-6 years): 1,574 samples
+  Class 1 - Late Childhood (7-9 years): 2,217 samples
+  Class 2 - Puberty (10-14 years): 7,224 samples
+  Class 3 - Late Adolescence (15-18 years): 1,078 samples
+
+REGRESSION PERFORMANCE (Bone Age in Months):
+  Test Set:
+    • MAE: 15.83 months (1.32 years)
+    • MSE: 399.17
+    • RMSE: 19.98 months (1.66 years)
+    • R² Score: 0.7087
+  
+  Validation Set:
+    • MAE: 15.65 months (1.30 years)
+    • RMSE: 19.91 months (1.66 years)
+    • R² Score: 0.7020
+
+CLASSIFICATION PERFORMANCE (Age Group):
+  Test Set:
+    • Accuracy: 0.7536 (75.36%)
+    • F1-Score (weighted): 0.7420
+  
+  Validation Set:
+    • Accuracy: 0.7519 (75.19%)
+    • F1-Score (weighted): 0.7393
+
+ERROR ANALYSIS:
+  • Mean Error: 0.04 months
+  • Std Error: 19.98 months
+  • Median Absolute Error: 13.60 months
+  • 90th Percentile Error: 32.28 months
+  • Predictions within ±12 months: 45.1%
+  • Predictions within ±24 months: 78.8%
+
+MODEL FILES:
+  • ResNet-50 Features: models\resnet50_features.npy
+  • Gradient Boosting Regressor: models\gradient_boosting_regressor.pkl
+  • SVM Classifier: models\svm_classifier.pkl
+  • Feature Scaler: models\feature_scaler.pkl
+  • Visualizations: image
+
+COMPARISON WITH LITERATURE:
+  • Target MAE (2026 SOTA): 0.25-0.30 years
+  • Our MAE: 1.32 years
+  • Status: Needs improvement
+
+================================================================================
